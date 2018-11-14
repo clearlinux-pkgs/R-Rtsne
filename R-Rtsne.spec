@@ -4,15 +4,13 @@
 #
 Name     : R-Rtsne
 Version  : 0.15
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/Rtsne_0.15.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rtsne_0.15.tar.gz
 Summary  : T-Distributed Stochastic Neighbor Embedding using a Barnes-Hut
 Group    : Development/Tools
 License  : BANNED
 Requires: R-Rtsne-lib = %{version}-%{release}
-Requires: R-Rcpp
-Requires: R-rlang
 BuildRequires : R-Rcpp
 BuildRequires : R-rlang
 BuildRequires : buildreq-R
@@ -42,10 +40,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542126288
+export SOURCE_DATE_EPOCH=1542212120
 
 %install
-export SOURCE_DATE_EPOCH=1542126288
+export SOURCE_DATE_EPOCH=1542212120
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
