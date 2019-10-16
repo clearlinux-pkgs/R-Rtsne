@@ -4,13 +4,14 @@
 #
 Name     : R-Rtsne
 Version  : 0.15
-Release  : 21
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/Rtsne_0.15.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rtsne_0.15.tar.gz
 Summary  : T-Distributed Stochastic Neighbor Embedding using a Barnes-Hut
 Group    : Development/Tools
-License  : BANNED
+License  : BSD-4-Clause
 Requires: R-Rtsne-lib = %{version}-%{release}
+Requires: R-Rcpp
 BuildRequires : R-Rcpp
 BuildRequires : R-rlang
 BuildRequires : buildreq-R
@@ -39,13 +40,13 @@ lib components for the R-Rtsne package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556492838
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571261386
 
 %install
-export SOURCE_DATE_EPOCH=1556492838
+export SOURCE_DATE_EPOCH=1571261386
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,7 +75,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
