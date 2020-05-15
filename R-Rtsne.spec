@@ -4,7 +4,7 @@
 #
 Name     : R-Rtsne
 Version  : 0.15
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/Rtsne_0.15.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rtsne_0.15.tar.gz
 Summary  : T-Distributed Stochastic Neighbor Embedding using a Barnes-Hut
@@ -13,7 +13,6 @@ License  : BSD-4-Clause
 Requires: R-Rtsne-lib = %{version}-%{release}
 Requires: R-Rcpp
 BuildRequires : R-Rcpp
-BuildRequires : R-rlang
 BuildRequires : buildreq-R
 
 %description
@@ -35,21 +34,22 @@ lib components for the R-Rtsne package.
 
 %prep
 %setup -q -c -n Rtsne
+cd %{_builddir}/Rtsne
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571261386
+export SOURCE_DATE_EPOCH=1589525933
 
 %install
-export SOURCE_DATE_EPOCH=1571261386
+export SOURCE_DATE_EPOCH=1589525933
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
