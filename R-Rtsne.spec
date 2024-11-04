@@ -7,7 +7,7 @@
 #
 Name     : R-Rtsne
 Version  : 0.17
-Release  : 51
+Release  : 52
 URL      : https://cran.r-project.org/src/contrib/Rtsne_0.17.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rtsne_0.17.tar.gz
 Summary  : T-Distributed Stochastic Neighbor Embedding using a Barnes-Hut
